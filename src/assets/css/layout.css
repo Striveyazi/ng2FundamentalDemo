@@ -1,0 +1,86 @@
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.left-nav .leftnav-top a, .left-nav .leftnav-cont ul li a, .left-nav .leftnav-footer a {
+  display: block;
+  margin: 7px 0 7px 0;
+  padding: 8px 10px 8px 10px; }
+  .left-nav .leftnav-top a i, .left-nav .leftnav-cont ul li a i, .left-nav .leftnav-footer a i {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: url(../img/left.fw.png) 0 0 no-repeat; }
+
+    .left-nav .leftnav-top a i:hover, .left-nav .leftnav-cont ul li a i:hover, .left-nav .leftnav-footer a i:hover {
+      background-position-x: -40px; }
+
+.left-nav {
+  width: 50px;
+  height: 100%;
+  background: #20202F;
+  position: absolute;
+  overflow: hidden; }
+  .left-nav .leftnav-top a {
+    padding-top: 15px;
+    margin: 0; }
+    .left-nav .leftnav-top a .witpm-logo {
+      background-position: 0 -205px; }
+      .left-nav .leftnav-top a .witpm-logo:hover {
+        background-position-x: 0px; }
+  .left-nav .leftnav-cont {
+    position: absolute;
+    top: 53px;
+    left: 0;
+    bottom: 97px;
+    overflow-x: hidden;
+    overflow-y: auto; }
+    .left-nav .leftnav-cont ul li a .desk-icon {
+      background-position: 0 -30px; }
+    .left-nav .leftnav-cont ul li a .search-icon {
+      background-position: 0 -59px; }
+    .left-nav .leftnav-cont ul li a .news-icon {
+      background-position: 0 -88px; }
+    .left-nav .leftnav-cont ul li a .item-icon {
+      background-position: 0 -116px; }
+    .left-nav .leftnav-cont ul li a .contact-icon {
+      background-position: 0 -144px; }
+  .left-nav .leftnav-footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0; }
+    .left-nav .leftnav-footer a .imessge-icon {
+      background-position: 0 -173px; }
+    .left-nav .leftnav-footer a .photo-icon {
+      background-position: 0 -205px; }
+
+.header-nav {
+  position: relative;
+  padding: 0 8px;
+  height: 50px;
+  line-height: 50px;
+  background: #fff;
+  border-bottom: 1px solid #EEEEEE; }
+  .header-nav .headernav-left {
+    max-width: 22%; }
+    .header-nav .headernav-left .proj-icon, .header-nav .headernav-left .set-icon {
+      display: inline-block;
+      width: 40px;
+      height: 50px;
+      background: #444; }
+    .header-nav .headernav-left .title {
+      margin: 0 15px; }
+    .header-nav .headernav-left .time {
+      margin-left: 20px; }
+  .header-nav .headernav-cont {
+    margin: 0 28% 0 28%;
+    text-align: center; }
+    .header-nav .headernav-cont ul li {
+      display: inline-block;
+      margin: 0 5px 0 6px;
+      padding: 0; }
+
+/*# sourceMappingURL=layout.css.map */

@@ -1,0 +1,10 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib/",
+  // 配置 glob 模式以排除文件和文件夹。 
+    "files.exclude": {
+        // exclude .js and .js.map files, when in a TypeScript project
+        "node_modules": true,
+        "**/*.js": { "when": "$(basename).ts"},
+        "**/*.js.map": true
+    }
+}
