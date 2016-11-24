@@ -3,15 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 // import { AboutComponent } from './about';
 // import { NoContentComponent } from './no-content';
 
-import { DashBoard } from './dashboard'
+//import { DashBoard } from './dashboard'
 
 import { DataResolver } from './app.resolver';
 
 
 export const ROUTES: Routes = [
-  // { path: '',      component: HomeComponent },
-  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashBoardModule'  },
-  // { path: 'projects',  loadChildren: 'app/projects/projects.module#ProjectsModule'   },
+  { path: 'dashboard', loadChildren: './areas/dashboard/dashboard.module#DashBoardModule' },
+  { path: 'project',  loadChildren: './areas/projects/projects.module#ProjectsModule' },
   // { path: 'home',  component: HomeComponent },
   // { path: 'about', component: AboutComponent },
   // {
@@ -21,4 +20,9 @@ export const ROUTES: Routes = [
   //   ,
   // },
   // { path: '**',    component: NoContentComponent },
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  },
 ];

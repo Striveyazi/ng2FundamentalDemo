@@ -20,7 +20,7 @@ import { LeftExpand,LeftSlider,RightSlider} from './slider';
     './app.component.css'
   ],
   template: `
-    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
+    <!--<pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>-->
     <div>
       <nav class="left-nav">
         <div class="leftnav-top">
@@ -31,7 +31,7 @@ import { LeftExpand,LeftSlider,RightSlider} from './slider';
                 <li><span><a routerLink='dashboard'><i class="desk-icon "></i></a></span></li>
                 <li><span><a href='javascript:;' (click)="onSearchClicked($event)"><i class="search-icon "></i></a></span></li>
                 <li><span><a href='javascript:;' (click)="onMessageClicked($event)"><i class="news-icon "></i></a></span></li>
-                <li><span><a href='javascript:;' (click)="onProjectClicked($event)"><i class="item-icon "></i></a></span></li>
+                <li><span><a routerLink='project'><i class="item-icon "></i></a></span></li>
                 <li><span><a routerLink='contacts'><i class="contact-icon "></i></a></span></li>
             </ul>
         </div>
@@ -40,13 +40,17 @@ import { LeftExpand,LeftSlider,RightSlider} from './slider';
             <a><i class="photo-icon"></i></a>
         </div>
       </nav>
-      <left-slider *ngIf=isLeftSlider ></left-slider>
-      <left-expand *ngIf=isLeftExpand ></left-expand>
+      <div class='ml50'>
+        <left-slider *ngIf=isLeftSlider ></left-slider>
+        <left-expand *ngIf=isLeftExpand ></left-expand>
+      </div>
     </div>
     <main>
       <router-outlet></router-outlet>
     </main>
-    <right-slider *ngIf=isRightSlider ></right-slider>
+    <div class='ml50'>
+      <right-slider *ngIf=isRightSlider ></right-slider>
+    </div>
     
     <!--<footer class = ml50>
       <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
@@ -76,17 +80,17 @@ export class AppComponent {
 
   onSearchClicked($event) {
     //todo:pass current route pos and the needed function 
-    this.isLeftExpand = true;
+    this.isLeftExpand =  this.isLeftExpand ? false:true;
   }
 
   onMessageClicked($event) {
     //todo:pass current route pos and the needed function 
-    this.isLeftExpand = true;
+    this.isLeftExpand =  this.isLeftExpand ? false:true;
   }
   
   onProjectClicked($event) {
     //todo:pass current route pos and the needed function 
-    this.isLeftExpand = true;
+    this.isLeftExpand =  this.isLeftExpand ? false:true;
   }
 
   ngOnInit() {

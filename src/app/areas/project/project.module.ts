@@ -1,3 +1,6 @@
+
+import { RouterModule } from '@angular/router';
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -11,13 +14,13 @@ import { ProjectMemberComponent } from './project-member.component'
 import { ProjectTaskDetalComponent } from "./project-task-detail.component";
 
 
-import { ProjectRoutingModule } from './project-routing.module';
+import { ProjectRoutes } from './project.routes';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
-        ProjectRoutingModule
+        RouterModule.forChild(ProjectRoutes)
     ],
     declarations: [
         ProjectComponent,

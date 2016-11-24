@@ -13,7 +13,7 @@ import { ROUTES } from './app.routes';
 
 //User Services Area modules
 import { DashBoardModule } from './areas/dashboard/dashboard.module';
-//import { ProjectsModule } from './areas/projects/projects.module';
+import { ProjectsModule } from './areas/projects/projects.module';
 
 // App is our top level component
 import { AppComponent } from './app.component';
@@ -67,7 +67,7 @@ type StoreType = {
     FormsModule,
     HttpModule,
     DashBoardModule,
-    //ProjectsModule,
+    ProjectsModule,
     RouterModule.forRoot(ROUTES, { useHash: false })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection

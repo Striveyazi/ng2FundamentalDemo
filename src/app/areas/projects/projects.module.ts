@@ -3,32 +3,20 @@ import { RouterModule } from '@angular/router';
 import { FormsModule }    from '@angular/forms';
 import { CommonModule }   from '@angular/common';
 
-import { ProjectModule } from './areas/project/project.module'
+import { ProjectModule } from '../project/project.module';
 
-import { ProjectComponent }  from './areas/project/project.component';
+import { ProjectsRoutes } from './projects.routes';;
 
-import { ProjectsComponent } from './areas/projects/projects.component';
-import { ProjectsListComponent } from './areas/projects/projects-list.component';
+//component for declarations
+import { ProjectsComponent } from './projects.component';
+import { ProjectsListComponent } from './projects-list.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ProjectModule,
-    RouterModule.forChild([
-        {
-          path:'',
-          component:ProjectsComponent,
-          children:[{
-            path:'projects',
-            component:ProjectsListComponent
-          },
-          {
-            path:'project/:Id',
-            component: ProjectComponent
-          }]
-        }
-    ])
+    RouterModule.forChild( ProjectsRoutes )
   ],
   declarations: [
     ProjectsComponent,
