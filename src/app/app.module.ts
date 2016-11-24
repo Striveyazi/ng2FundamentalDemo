@@ -11,7 +11,7 @@ import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularcla
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 
-//User modules
+//User Services Area modules
 import { DashBoardModule } from './dashboard/dashboard.module';
 import { ProjectsModule } from './projects/projects.module';
 

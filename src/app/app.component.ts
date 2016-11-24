@@ -5,7 +5,6 @@ import { Component, ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AppState } from './app.service';
-
 import { ActivatedRouteService } from './service/app/activatedRouteService';
 /*
  * App Component
