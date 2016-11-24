@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core'; 
 
-import { ActivatedRouteService } from '../service/app/activatedRouteService';
+//import { ActivatedRouteService } from '../service/app/activatedRouteService';
+
 @Component({
   template:  `
 	<div class="ml50">
@@ -49,11 +50,11 @@ export class DashBoardComponent implements OnInit {
 	disagreed = 0;
 	voters = ['Mr.IQ','Ms.Universe','Bombasto'];
 
-	constructor(private activatedRouteService: ActivatedRouteService) {}
+	constructor() {}
 
 	ngOnInit() {
     // viewChild is set after the view has been initialized
-    this.activatedRouteService.setActivatedRouteSegment("dashboard");
+    // this.activatedRouteService.setActivatedRouteSegment("dashboard");
   }
 
 	onVoted(agreed:boolean){

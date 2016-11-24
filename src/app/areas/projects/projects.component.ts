@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 
-import { ActivatedRouteService } from '../service/app/activatedRouteService';
+//import { ActivatedRouteService } from '../service/app/activatedRouteService';
 
 @Component({
     template:
@@ -21,10 +21,10 @@ import { ActivatedRouteService } from '../service/app/activatedRouteService';
 /*二级壳*/
 export class ProjectsComponent implements OnInit{
 
-    constructor(private activatedRouteService: ActivatedRouteService) {}
+    constructor() {}
 
     ngOnInit() {
     // viewChild is set after the view has been initialized
-    this.activatedRouteService.setActivatedRouteSegment("project");
+    //this.activatedRouteService.setActivatedRouteSegment("project");
   }
  }

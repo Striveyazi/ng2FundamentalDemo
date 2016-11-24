@@ -5,7 +5,10 @@ import { Component, ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AppState } from './app.service';
-import { ActivatedRouteService } from './service/app/activatedRouteService';
+//import { ActivatedRouteService } from './service/app/activatedRouteService';
+
+
+import { LeftExpand,LeftSlider,RightSlider} from './slider';
 /*
  * App Component
  * Top Level Component
@@ -17,59 +20,34 @@ import { ActivatedRouteService } from './service/app/activatedRouteService';
     './app.component.css'
   ],
   template: `
-   <!--<nav>
-      <span>
-        <a [routerLink]=" ['./'] ">
-          Index
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./home'] ">
-          Home
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./detail'] ">
-          Detail
-        </a>
-      </span>
-      |
-      <span>
-        <a [routerLink]=" ['./about'] ">
-          About
-        </a>
-      </span>
-    </nav>-->
-
     <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
-    <nav class="left-nav">
-      <div class="leftnav-top">
-          <a><i class="witpm-logo"></i></a>
-      </div>
-      <div class="leftnav-cont">
-          <ul>
-              <li><span><a routerLink='dashboard'><i class="desk-icon "></i></a></span></li>
-              <li><span><a href="javascript:;" (click)="onSearchClicked($event)"><i class="search-icon "></i></a></span></li>
-              <li><span><a routerLink='message'><i class="news-icon "></i></a></span></li>
-              <li><span><a routerLink='projects'><i class="item-icon "></i></a></span></li>
-              <li><span><a routerLink='contacts'><i class="contact-icon "></i></a></span></li>
-          </ul>
-      </div>
-      <div class="leftnav-footer">
-          <a><i class="imessge-icon"></i></a>
-          <a><i class="photo-icon"></i></a>
-      </div>
-    </nav>
-
+    <div>
+      <nav class="left-nav">
+        <div class="leftnav-top">
+            <a><i class="witpm-logo"></i></a>
+        </div>
+        <div class="leftnav-cont">
+            <ul>
+                <li><span><a routerLink='dashboard'><i class="desk-icon "></i></a></span></li>
+                <li><span><a href='javascript:;' (click)="onSearchClicked($event)"><i class="search-icon "></i></a></span></li>
+                <li><span><a href='javascript:;' (click)="onMessageClicked($event)"><i class="news-icon "></i></a></span></li>
+                <li><span><a href='javascript:;' (click)="onProjectClicked($event)"><i class="item-icon "></i></a></span></li>
+                <li><span><a routerLink='contacts'><i class="contact-icon "></i></a></span></li>
+            </ul>
+        </div>
+        <div class="leftnav-footer">
+            <a><i class="imessge-icon"></i></a>
+            <a><i class="photo-icon"></i></a>
+        </div>
+      </nav>
+      <left-slider *ngIf=isLeftSlider ></left-slider>
+      <left-expand *ngIf=isLeftExpand ></left-expand>
+    </div>
     <main>
-     <div class='ml50'>
-      <search-dashboard *ngIf='isSearchClickedInDashBoard'></search-dashboard>
-     </div>
       <router-outlet></router-outlet>
     </main>
-
+    <right-slider *ngIf=isRightSlider ></right-slider>
+    
     <!--<footer class = ml50>
       <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
       <pre>this.test = {{ test }}</pre>
@@ -80,23 +58,35 @@ import { ActivatedRouteService } from './service/app/activatedRouteService';
       </div>
     </footer>-->
   `,
-  providers:[ActivatedRouteService]
+  // providers:[ActivatedRouteService]
 })
 export class AppComponent {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
   test =  ""
-  isSearchClickedInDashBoard = false;
+  isLeftSlider = false;
+  isLeftExpand = false;
+  isRightSlider = false;
 
   constructor(
     public appState: AppState,
-    private router:Router,
-    private activatedRouteService: ActivatedRouteService
+    private router:Router
   ) { }
 
   onSearchClicked($event) {
-    console.log(this.activatedRouteService.getActivatedRouteSegment());
+    //todo:pass current route pos and the needed function 
+    this.isLeftExpand = true;
+  }
+
+  onMessageClicked($event) {
+    //todo:pass current route pos and the needed function 
+    this.isLeftExpand = true;
+  }
+  
+  onProjectClicked($event) {
+    //todo:pass current route pos and the needed function 
+    this.isLeftExpand = true;
   }
 
   ngOnInit() {

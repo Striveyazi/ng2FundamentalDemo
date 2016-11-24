@@ -12,17 +12,23 @@ import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
 
 //User Services Area modules
-import { DashBoardModule } from './dashboard/dashboard.module';
-import { ProjectsModule } from './projects/projects.module';
+import { DashBoardModule } from './areas/dashboard/dashboard.module';
+//import { ProjectsModule } from './areas/projects/projects.module';
 
 // App is our top level component
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
-import { XLarge } from './home/x-large';
+// import { HomeComponent } from './home';
+// import { AboutComponent } from './about';
+// import { NoContentComponent } from './no-content';
+
+// egde slider/expand components
+import {LeftExpand} from './slider/left-expand.component';
+import {LeftSlider} from './slider/left-slider.component';
+import {RightSlider} from './slider/right-slider.component';
+
+//import { XLarge } from './home/x-large';
 
 import { SearchDashBoard } from './slider/search-dashboard.component';
 import { SearchProject } from './slider/search-project.component';
@@ -46,20 +52,23 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
-    HomeComponent,
-    SearchDashBoard,
-    SearchProject,
-    NoContentComponent,
-    XLarge
+    // AboutComponent,
+    // HomeComponent,
+    // NoContentComponent,
+    // SearchDashBoard,
+    // SearchProject,
+    LeftExpand,
+    LeftSlider,
+    RightSlider,
+    //XLarge
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
     HttpModule,
     DashBoardModule,
-    ProjectsModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    //ProjectsModule,
+    RouterModule.forRoot(ROUTES, { useHash: false })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
@@ -103,6 +112,5 @@ export class AppModule {
     store.disposeOldHosts();
     delete store.disposeOldHosts;
   }
-
 }
 

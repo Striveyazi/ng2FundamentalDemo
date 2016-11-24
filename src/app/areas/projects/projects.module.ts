@@ -3,11 +3,12 @@ import { RouterModule } from '@angular/router';
 import { FormsModule }    from '@angular/forms';
 import { CommonModule }   from '@angular/common';
 
-import { ProjectModule } from './project/project.module'
+import { ProjectModule } from './areas/project/project.module'
 
-import { ProjectComponent }  from './project/project.component';
-import { ProjectsComponent } from './projects.component';
-import { ProjectsListComponent } from './projects-list.component';
+import { ProjectComponent }  from './areas/project/project.component';
+
+import { ProjectsComponent } from './areas/projects/projects.component';
+import { ProjectsListComponent } from './areas/projects/projects-list.component';
 
 @NgModule({
   imports: [

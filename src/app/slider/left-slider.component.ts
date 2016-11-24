@@ -1,16 +1,14 @@
 import { Component,ViewEncapsulation } from '@angular/core';
 
 @Component({
-    selector:'right-slider',
+    selector:'left-slider',
     encapsulation:ViewEncapsulation.None,
     template:`
         <div>
-            <nav class='sliderNav'>
-            </nav>
             <div>滑块<div>
         </div>
     `
 })
-export class RightSlider {
+export class LeftSlider {
 
 }
