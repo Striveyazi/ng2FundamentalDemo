@@ -25,7 +25,8 @@ export const ProjectRoutes: Routes = [
                             path: '',
                             component: ProjectTaskDetalComponent
                         }]
-                    },{
+                    },
+                    {
                         path: ''
                     }
                 ]

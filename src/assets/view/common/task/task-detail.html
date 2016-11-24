@@ -1,0 +1,227 @@
+<!--右侧滑出——任务详情面板-->
+<div class="slide-panel">
+    <!--左侧导航条-->
+    <div class="left-slide">
+        <div class="leftslide-top">
+            <a title="任务进度">
+                <canvas id="yuan" width="36" height="36"></canvas>
+            </a>
+        </div>
+        <div class="leftslide-cont">
+            <ul>
+                <li><a title="关注"><i class="fa fa-heart-o "></i></a></li>
+                <li><a title="分配给"><i class="fa fa-user-o "></i></a></li>
+                <li><a title="标签"><i class="fa fa-tag  "></i></a> </li>
+                <li><a title="附件"><i class="fa fa-paperclip "></i></a></li>
+                <li><a title="评论"><i class="fa fa-commenting-o "></i></a></li>
+                <li><a title="任务日志"><i class="fa fa-file-text-o "></i></a></li>
+
+            </ul>
+            <ul>
+                <li><a title="移动任务"><i class="fa fa-share-square-o "></i></a></li>
+                <li><a title="复制任务"><i class="fa fa-clone "></i></a></li>
+                <li><a title="删除任务"><i class="fa fa-trash-o "></i></a></li>
+                <li><a title="打印任务"><i class="fa fa-print "></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!---右侧详情-->
+    <div class="right-slide">
+        <!--右侧详情——顶部-->
+        <div class="rightslide-top">
+            <ul>
+                <li>编号：<span class="task-name font-flow" title="">TASK001</span></li>
+                <li>优先级：<span class="priority font-flow" title="">普通</span></li>
+                <li>截止期：<span class="deadline font-flow" title="">2016/11/21</span></li>
+                <li>所属任务包：<span class="task-bag font-flow" title="">未分类bug</span></li>
+                <!--<li><a title="关闭任务"><i></i></a></li>-->
+                <li><a title="关闭任务"><button type="button" class="close " aria-hidden="true">×</button></a></li>
+
+            </ul>
+        </div>
+        <!--右侧详情——内容-->
+        <div class="rightslide-cont">
+            <!--内容——顶部-->
+            <div class="rightcont-top">
+                <label for="man-hour"><input type="text" name="man-hour" id="" value=""/></label>
+                <label for="priority"><input type="text" name="priority" id="" value=""/></label>
+                <label for="deadline"><input type="text" name="deadline" id="" value=""/></label>
+            </div>
+            <!--内容——标题-->
+            <div class="rightcont-title">
+                <label for=" "><input type="text" name=" " id="" value=""/></label>
+            </div>
+            <!--内容——编辑区-->
+            <div class="rightcont-editbox">
+                <label for=" "><input type="text" name=" " id="" value=""/></label>
+                <input class="btn" type="button" name="" id="" value="保存" />
+                <input class="btn" type="button" name="" id="" value="取消" />
+            </div>
+            <!--内容——分配-->
+            <div class="rightcont-assign">
+                <div class="assigned">
+                    <div class="intro">
+                        <span><i class="fa fa-user-o "></i></span>分配给
+                    </div>
+                    <ul class="cont">
+                        <li>
+                            <a class="fa fa-times-circle"></a>
+                            <a class="avatar"><span><img /></span></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-times-circle"></a>
+                            <a class="avatar"><span><img /></span></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-times-circle"></a>
+                            <a class="avatar"><span>+</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="concern">
+                    <div class="intro">
+                        <span><i class="fa fa-heart-o "></i></span>关注
+                    </div>
+                    <ul class="cont">
+                        <li>
+                            <a class="fa fa-times-circle"></a>
+                            <a class="avatar"><span><img /></span></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-times-circle"></a>
+                            <a class="avatar"><span><img /></span></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-times-circle"></a>
+                            <a class="avatar"><span><img /></span></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-times-circle"></a>
+                            <a class="avatar"><span><img /></span></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-times-circle"></a>
+                            <a class="avatar"><span><img /></span></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-times-circle"></a>
+                            <a class="avatar"><span>+</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--内容——标签-->
+            <div class="rightcont-label">
+                <div class="intro font-flow">
+                    <span><i class="fa fa-tag "></i></span>标签
+                </div>
+                <ul class="cont">
+                    <li title="我是标签"><span class="label">我是标签</span></li>
+                    <li title="我是标签"><span class="label">我是标签</span></li>
+                    <li title="我是标签"><span class="label">我是标签</span></li>
+                    <li title="我是标签"><span class="label">我是标签</span></li>
+                    <li title="我是标签"><span class="label">我是标签</span></li>
+                    <li title="我是标签"><span class="label">我是标签</span></li>
+                    <li><a>添加标签</a></li>
+
+                </ul>
+            </div>
+            <!--内容——附件-->
+            <div class="rightcont-options">
+                <div class="intro">
+                    <span><i class="fa fa-paperclip "></i></span>附件
+                </div>
+                <ul class="cont">
+                    <li>
+                        <div class="format fl"></div>
+                        <div class="detail fl">
+                            <span class="name">表格.doc</span>
+                            <span class="add-time">添加于2016/11/11</span>
+                            <span class="opt">
+										<a>下载</a><a>删除</a>
+									</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="format fl"></div>
+                        <div class="detail fl">
+                            <span class="name">表格.doc</span>
+                            <span class="add-time">添加于2016/11/11</span>
+                            <span class="opt">
+										<a>下载</a><a>删除</a>
+									</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="format fl"></div>
+                        <div class="detail fl">
+                            <span class="name">表格.doc</span>
+                            <span class="add-time">添加于2016/11/11</span>
+                            <span class="opt">
+										<a>下载</a><a>删除</a>
+									</span>
+                        </div>
+                    </li>
+                    <li><a>添加附件</a></li>
+                </ul>
+            </div>
+            <!--内容——评论-->
+            <div class="rightcont-comment">
+                <div class="intro">
+                    <span><i class="fa fa-commenting-o "></i></span>评论<span>5</span>
+                </div>
+                <ul class="cont">
+                    <li class="text-center"><a><i class="fa fa-chevron-down "></i>展开更多评论</a></li>
+                    <li>
+                        <div class="format" title="米青">
+                            <img />
+                            <!--alt="米青"-->
+                        </div>
+                        <div class="detail">
+                            <div class="detail-name ">
+                                <div class="fl">
+                                    <span>米青</span><span>31 minutes ago </span>
+                                </div>
+                                <div class="detail-opt fr">
+                                    <a>编辑</a><a>删除</a>
+                                </div>
+                            </div>
+                            <div class="words">
+                                <div>
+                                    这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容这里是评论内容
+                                </div>
+                                <div class="voice">
+                                    <span></span>
+                                </div>
+                                <div class="cognate">
+                                    <span>关联任务：</span><a><i></i><span>缺少登陆注册</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--内容——日志-->
+            <div class="rightcont-journal">
+                <div class="intro">
+                    <span><i class="fa fa-file-text-o "></i></span>任务日志
+                </div>
+                <ul class="cont">
+                    <li>
+                        <img />&nbsp;
+                        <span>米青</span>&nbsp;&nbsp;
+                        <span>录入了进度</span>&nbsp;&nbsp;
+                        <span class="font-flow">这里市评论内容，超过本行宽度即截字并加上</span>&nbsp;&nbsp;
+                        <span class=" ">31 minutes ago</span>
+                    </li>
+                    <li>
+
+                        <img />&nbsp;<span>米青</span>&nbsp;&nbsp;<span>录入了进度</span>&nbsp;&nbsp;
+                        <span>这里市评论内容，超过本行宽度即截字并加上</span>&nbsp;&nbsp;<span>31 minutes ago</span>
+                    </li>
+                    <li class="text-center"><a>加载更多任务日志</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
