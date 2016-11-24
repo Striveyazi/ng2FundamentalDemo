@@ -5,11 +5,13 @@ import { ProjectMainTaskComponent } from './project-maintask.component';
 import { ProjectBugsComponent } from './project-bugs.component';
 import { ProjectTopicsComponent } from './project-topics.component';
 
-import { ProjectTaskDetalComponent } from "./project-task-detail.component";
+import { RightSlider } from '../../common/slider/right-slider.component'
+import { ProjectTaskDetalComponent } from '../../common/task/project-task-detail.component'
+
 
 export const ProjectRoutes: Routes = [
     {
-        path: 'project/:Id',
+        path: 'project/:id',
         component: ProjectComponent,
         children: [
             {
@@ -17,10 +19,13 @@ export const ProjectRoutes: Routes = [
                 component: ProjectMainTaskComponent,
                 children: [
                     {
-                        path: ':Id',
-                        component: ProjectTaskDetalComponent
-                    },
-                    {
+                        path: ':id',
+                        component: RightSlider,
+                        children: [{
+                            path: '',
+                            component: ProjectTaskDetalComponent
+                        }]
+                    },{
                         path: ''
                     }
                 ]

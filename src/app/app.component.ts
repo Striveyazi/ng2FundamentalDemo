@@ -8,7 +8,8 @@ import { AppState } from './app.service';
 //import { ActivatedRouteService } from './service/app/activatedRouteService';
 
 
-import { LeftExpand,LeftSlider,RightSlider} from './slider';
+import {LeftExpand} from './common/slider/left-expand.component';
+import {LeftSlider} from './common/slider/left-slider.component';
 /*
  * App Component
  * Top Level Component
@@ -48,9 +49,6 @@ import { LeftExpand,LeftSlider,RightSlider} from './slider';
     <main>
       <router-outlet></router-outlet>
     </main>
-    <div class='ml50'>
-      <right-slider *ngIf=isRightSlider ></right-slider>
-    </div>
     
     <!--<footer class = ml50>
       <span>WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
@@ -71,7 +69,6 @@ export class AppComponent {
   test =  ""
   isLeftSlider = false;
   isLeftExpand = false;
-  isRightSlider = false;
 
   constructor(
     public appState: AppState,

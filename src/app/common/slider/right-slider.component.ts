@@ -9,6 +9,7 @@ import { Component,ViewEncapsulation } from '@angular/core';
             </nav>
             <div>滑块<div>
         </div>
+        <router-outlet></router-outlet>
     `
 })
 export class RightSlider {

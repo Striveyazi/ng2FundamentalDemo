@@ -24,9 +24,8 @@ import { AppState, InternalStateType } from './app.service';
 // import { NoContentComponent } from './no-content';
 
 // egde slider/expand components
-import {LeftExpand} from './slider/left-expand.component';
-import {LeftSlider} from './slider/left-slider.component';
-import {RightSlider} from './slider/right-slider.component';
+import {LeftExpand} from './common/slider/left-expand.component';
+import {LeftSlider} from './common/slider/left-slider.component';
 
 //import { XLarge } from './home/x-large';
 
@@ -59,7 +58,6 @@ type StoreType = {
     // SearchProject,
     LeftExpand,
     LeftSlider,
-    RightSlider,
     //XLarge
   ],
   imports: [ // import Angular's modules

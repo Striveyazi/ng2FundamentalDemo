@@ -11,8 +11,9 @@ import { ProjectMainTaskComponent } from './project-maintask.component';
 import { ProjectBugsComponent } from './project-bugs.component';
 import { ProjectTopicsComponent } from './project-topics.component';
 import { ProjectMemberComponent } from './project-member.component'
-import { ProjectTaskDetalComponent } from "./project-task-detail.component";
 
+import { RightSlider } from '../../common/slider/right-slider.component'
+import { ProjectTaskDetalComponent } from '../../common/task/project-task-detail.component'
 
 import { ProjectRoutes } from './project.routes';
 
@@ -23,12 +24,13 @@ import { ProjectRoutes } from './project.routes';
         RouterModule.forChild(ProjectRoutes)
     ],
     declarations: [
+        RightSlider,
+        ProjectTaskDetalComponent,
         ProjectComponent,
         ProjectMainTaskComponent,
         ProjectBugsComponent,
         ProjectTopicsComponent,
         ProjectMemberComponent,
-        ProjectTaskDetalComponent
     ],
     providers: [
     ]
