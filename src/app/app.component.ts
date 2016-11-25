@@ -5,7 +5,7 @@ import { Component, ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AppState } from './app.service';
-//import { ActivatedRouteService } from './service/app/activatedRouteService';
+import { WpGlobalStateService } from './service/app/wp-global-state.service'
 
 
 import {LeftExpand} from './common/slider/left-expand.component';
@@ -60,7 +60,7 @@ import {LeftSlider} from './common/slider/left-slider.component';
       </div>
     </footer>-->
   `,
-  // providers:[ActivatedRouteService]
+  providers:[WpGlobalStateService]
 })
 export class AppComponent {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
@@ -72,7 +72,8 @@ export class AppComponent {
 
   constructor(
     public appState: AppState,
-    private router:Router
+    private router:Router,
+    private wpGlobalStateService:WpGlobalStateService
   ) { }
 
   onSearchClicked($event) {

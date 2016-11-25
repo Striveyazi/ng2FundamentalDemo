@@ -19,9 +19,6 @@ import { ProjectsModule } from './areas/projects/projects.module';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-// import { HomeComponent } from './home';
-// import { AboutComponent } from './about';
-// import { NoContentComponent } from './no-content';
 
 // egde slider/expand components
 import {LeftExpand} from './common/slider/left-expand.component';
@@ -51,11 +48,6 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    // AboutComponent,
-    // HomeComponent,
-    // NoContentComponent,
-    // SearchDashBoard,
-    // SearchProject,
     LeftExpand,
     LeftSlider,
     //XLarge
@@ -74,7 +66,11 @@ type StoreType = {
   ]
 })
 export class AppModule {
-  constructor(public appRef: ApplicationRef, public appState: AppState) {}
+  
+  constructor( public appRef: ApplicationRef, 
+    public appState: AppState) {
+    
+  }
 
   hmrOnInit(store: StoreType) {
     if (!store || !store.state) return;
