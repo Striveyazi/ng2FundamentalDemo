@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit} from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+
+import { GetProjectTasks } from '../../service/project/getProjectTasks';
 
 class Task {
   Id: number;
@@ -25,13 +27,14 @@ class Task {
   `
 })
 /* 三级组件 */
-export class ProjectMainTaskComponent {
+export class ProjectMainTaskComponent implements OnInit {
   tasks: Task[];
   public selectedId: number;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private GetProjectTasks:GetProjectTasks
   ) {
   }
 
@@ -40,14 +43,13 @@ export class ProjectMainTaskComponent {
   }
 
   ngOnInit() {
-    this.route.params.forEach((params: Params) => {
-      this.selectedId = params['Id'];
+      let params = this.route.snapshot.pathFromRoot[1].params;
+      //console.log(this.route.snapshot)
+      this.selectedId = +params['id'];
 
-      this.tasks = [
-        { Id: 1, Title: "任务大大1号", Description: "test" },
-        { Id: 2, Title: "任务小小2号", Description: "test" }
-      ];
-    });
+      this.tasks =  this.GetProjectTasks.getProjectTasks(this.selectedId);
+      console.log('return:' ,this.tasks );
+
   }
 
   onSelect(task: Task) {
@@ -55,9 +57,5 @@ export class ProjectMainTaskComponent {
 
     // Navigate with relative link
     this.router.navigate([task.Id],{ relativeTo: this.route });
-
- 
-
-
   }
 }

@@ -17,6 +17,9 @@ import { ProjectTaskDetalComponent } from '../../common/task/project-task-detail
 
 import { ProjectRoutes } from './project.routes';
 
+//service
+import { GetProjectTasks } from '../../service/project/getProjectTasks';
+
 @NgModule({
     imports: [
         CommonModule,
@@ -33,6 +36,7 @@ import { ProjectRoutes } from './project.routes';
         ProjectMemberComponent,
     ],
     providers: [
+        GetProjectTasks
     ]
 })
 export class ProjectModule { }

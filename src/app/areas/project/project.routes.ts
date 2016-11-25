@@ -39,15 +39,14 @@ export const ProjectRoutes: Routes = [
                 path: 'Topic',
                 component: ProjectTopicsComponent
             },
-            // {
-            //     path: 'Member',
-            //     component: ProjectMemberComponent
-            // }
+            {
+                path:''
+            }
         ]
     },
-    {
-        path: 'project/:Id',
-        redirectTo: 'project/:Id/Task',
-        pathMatch: 'full'
-    },
+    // {
+    //     path: 'project/:Id',
+    //     redirectTo: 'project/:Id/Task',
+    //     pathMatch: 'full'
+    // },
 ];

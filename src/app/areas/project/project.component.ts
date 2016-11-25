@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 @Component({
     template: `
@@ -35,4 +36,15 @@ import { Component } from '@angular/core';
 })
 
 /* 二级壳 */
-export class ProjectComponent { }
+export class ProjectComponent implements OnInit {
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router
+    ) { }
+
+    ngOnInit() {
+        console.log(this.route.snapshot.params);
+        let id = this.route.snapshot.params['id'];
+        this.router.navigate(['task']);
+    }
+}
