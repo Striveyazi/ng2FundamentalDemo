@@ -4,6 +4,24 @@
 .fr {
   float: right; }
 
+.font-flow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+* ::-webkit-scrollbar {
+  width: 6px; }
+* ::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.09);
+  border-radius: 3px; }
+* ::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px; }
+* ::-webkit-scrollbar-thumb:hover {
+  background-color: #AAAAAA; }
+* ::-webkit-scrollbar-button {
+  display: none; }
+
 .left-nav .leftnav-top a, .left-nav .leftnav-cont ul li a, .left-nav .leftnav-footer a {
   display: block;
   margin: 7px 0 7px 0;
@@ -14,7 +32,6 @@
     height: 30px;
     text-align: center;
     background: url(../img/left.fw.png) 0 0 no-repeat; }
-
     .left-nav .leftnav-top a i:hover, .left-nav .leftnav-cont ul li a i:hover, .left-nav .leftnav-footer a i:hover {
       background-position-x: -40px; }
 
@@ -82,5 +99,9 @@
       display: inline-block;
       margin: 0 5px 0 6px;
       padding: 0; }
+
+.main-cont {
+  height: 1200px;
+  background: #ccc; }
 
 /*# sourceMappingURL=layout.css.map */

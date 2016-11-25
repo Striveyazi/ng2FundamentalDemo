@@ -55,5 +55,9 @@ export class ProjectMainTaskComponent {
 
     // Navigate with relative link
     this.router.navigate([task.Id],{ relativeTo: this.route });
+
+ 
+
+
   }
 }
