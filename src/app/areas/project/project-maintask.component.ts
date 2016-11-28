@@ -1,10 +1,11 @@
 import { Component,OnInit} from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
+import { WpGlobalStateService } from '../../service/app/wp-global-state.service'
 import { GetProjectTasks } from '../../service/project/getProjectTasks';
 
 class Task {
-  Id: number;
+  Id: string;
   Title: string;
   Description: string;
 }
@@ -29,12 +30,13 @@ class Task {
 /* 三级组件 */
 export class ProjectMainTaskComponent implements OnInit {
   tasks: Task[];
-  public selectedId: number;
+  public selectedId: string;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private GetProjectTasks:GetProjectTasks
+    private GetProjectTasks:GetProjectTasks,
+    private wpGlobalStateService:WpGlobalStateService
   ) {
   }
 
@@ -43,9 +45,7 @@ export class ProjectMainTaskComponent implements OnInit {
   }
 
   ngOnInit() {
-      let params = this.route.snapshot.pathFromRoot[1].params;
-      //console.log(this.route.snapshot)
-      this.selectedId = +params['id'];
+      this.selectedId  = this.wpGlobalStateService.getActivatedRouteSegment();
 
       this.tasks =  this.GetProjectTasks.getProjectTasks(this.selectedId);
       console.log('return:' ,this.tasks );

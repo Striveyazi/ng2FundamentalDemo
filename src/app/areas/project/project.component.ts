@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
+import { WpGlobalStateService } from '../../service/app/wp-global-state.service'
+
 @Component({
     template: `
 	<div class="ml50">
@@ -39,12 +41,15 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 export class ProjectComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        private wpGlobalStateService:WpGlobalStateService
     ) { }
 
     ngOnInit() {
         console.log(this.route.snapshot.params);
         let id = this.route.snapshot.params['id'];
-        this.router.navigate(['task']);
+        //todo: transmit the projectId to globalVariable
+        this.wpGlobalStateService.setActivatedRouteSegment(id);
+        this.router.navigate(['Task'],{ relativeTo: this.route });
     }
 }
