@@ -10,6 +10,9 @@ import { WpGlobalStateService } from './service/app/wp-global-state.service'
 
 import {LeftExpand} from './common/slider/left-expand.component';
 import {LeftSlider} from './common/slider/left-slider.component';
+
+
+import {MarkdownIME} from '../assets/plug/MarkdownIME';
 /*
  * App Component
  * Top Level Component
@@ -47,6 +50,9 @@ import {LeftSlider} from './common/slider/left-slider.component';
       </div>
     </div>
     <main>
+      <div  class='ml50' id="editor" contentEditable="true">
+        <p>Input your text here...</p>
+      </div>
       <router-outlet></router-outlet>
     </main>
     
@@ -73,8 +79,9 @@ export class AppComponent {
   constructor(
     public appState: AppState,
     private router:Router,
-    private wpGlobalStateService:WpGlobalStateService
-  ) { }
+    private wpGlobalStateService:WpGlobalStateService,
+  ) { 
+  }
 
   onSearchClicked($event) {
     //todo:pass current route pos and the needed function 
@@ -93,6 +100,9 @@ export class AppComponent {
 
   ngOnInit() {
     console.log('Initial App State', this.appState.state);
+    console.log(MarkdownIME);
+    var editor = document.getElementById('editor');
+    MarkdownIME.Enhance(editor);
   }
 }
 

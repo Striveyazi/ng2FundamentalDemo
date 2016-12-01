@@ -32,6 +32,8 @@ import { WpGlobalStateService } from '../../service/app/wp-global-state.service'
             </ul>
         </div>
     </nav>
+    <p>这是组件一的输入框</p><input type='' value='test' #input (keyup)="onClick(input)" />
+    <p>子组件路由插孔:</p>
     <router-outlet></router-outlet>
 	</div>
   `
@@ -39,6 +41,7 @@ import { WpGlobalStateService } from '../../service/app/wp-global-state.service'
 
 /* 二级壳 */
 export class ProjectComponent implements OnInit {
+    
     constructor(
         private route: ActivatedRoute,
         private router: Router,
@@ -51,5 +54,8 @@ export class ProjectComponent implements OnInit {
         //todo: transmit the projectId to globalVariable
         this.wpGlobalStateService.setActivatedRouteSegment(id);
         this.router.navigate(['Task'],{ relativeTo: this.route });
+    }
+    onClick(e){
+        this.wpGlobalStateService.setTestValue(e.value);
     }
 }

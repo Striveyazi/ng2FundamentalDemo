@@ -8,7 +8,10 @@ import { bootloader } from '@angularclass/hmr';
  * App Module
  * our top level module that holds all of our components
  */
+import {MarkdownIME} from './assets/plug/MarkdownIME';
+
 import { AppModule } from './app';
+
 
 /*
  * Bootstrap our Angular app with a top level NgModule

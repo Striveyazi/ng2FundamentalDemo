@@ -29,6 +29,7 @@ import {LeftSlider} from './common/slider/left-slider.component';
 import { SearchDashBoard } from './slider/search-dashboard.component';
 import { SearchProject } from './slider/search-project.component';
 
+
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,

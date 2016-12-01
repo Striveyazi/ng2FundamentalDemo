@@ -23,6 +23,7 @@ class Task {
           <span class="badge">{{task.Id}}</span> {{task.Title}}
         </li>
       </ul>
+      <p>这是组件二的展示板</p><p>{{this.test}}</p>
       <router-outlet></router-outlet>
   </div>
   `
@@ -31,6 +32,7 @@ class Task {
 export class ProjectMainTaskComponent implements OnInit {
   tasks: Task[];
   public selectedId: string;
+  test:string;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,6 +40,13 @@ export class ProjectMainTaskComponent implements OnInit {
     private GetProjectTasks:GetProjectTasks,
     private wpGlobalStateService:WpGlobalStateService
   ) {
+      wpGlobalStateService.Rxjs_Subject_Test$.subscribe(
+        value=>{
+          this.test = value;
+        }
+      );
+      
+      this.wpGlobalStateService.setTestValue('test');
   }
 
   isSelected(task: Task) {
