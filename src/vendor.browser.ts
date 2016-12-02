@@ -27,5 +27,7 @@ if ('production' === ENV) {
 
 } else {
   // Development
-
+  require('./assets/plug/crypto1/crypto/crypto.js');
+  require('./assets/plug/crypto1/hmac/hmac.js');
+  require('./assets/plug/crypto1/sha1/sha1.js');
 }

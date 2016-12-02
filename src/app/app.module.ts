@@ -15,6 +15,9 @@ import { ROUTES } from './app.routes';
 import { DashBoardModule } from './areas/dashboard/dashboard.module';
 import { ProjectsModule } from './areas/projects/projects.module';
 
+import { Test } from './test.component';
+import { Uploader } from './common/uploader/uploader.component';
+
 // App is our top level component
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
@@ -52,6 +55,8 @@ type StoreType = {
     LeftExpand,
     LeftSlider,
     //XLarge
+    Test,
+    Uploader
   ],
   imports: [ // import Angular's modules
     BrowserModule,

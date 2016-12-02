@@ -13,6 +13,9 @@ import {LeftSlider} from './common/slider/left-slider.component';
 
 
 import {MarkdownIME} from '../assets/plug/MarkdownIME';
+import { Test } from './test.component';
+
+import { Uploader } from './common/uploader/uploader.component';
 /*
  * App Component
  * Top Level Component
@@ -54,6 +57,8 @@ import {MarkdownIME} from '../assets/plug/MarkdownIME';
         <p>Input your text here...</p>
       </div>
       <router-outlet></router-outlet>
+
+      <test-child></test-child>
     </main>
     
     <!--<footer class = ml50>
@@ -72,7 +77,6 @@ export class AppComponent {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
-  test =  ""
   isLeftSlider = false;
   isLeftExpand = false;
 

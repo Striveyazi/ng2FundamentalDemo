@@ -14,6 +14,7 @@ import { ProjectMemberComponent } from './project-member.component'
 
 import { RightSlider } from '../../common/slider/right-slider.component'
 import { ProjectTaskDetalComponent } from '../../common/task/project-task-detail.component'
+import { TaskEditorComponent } from '../../common/editor/task-editor.component'
 
 import { ProjectRoutes } from './project.routes';
 
@@ -34,6 +35,7 @@ import { GetProjectTasks } from '../../service/project/getProjectTasks';
         ProjectBugsComponent,
         ProjectTopicsComponent,
         ProjectMemberComponent,
+        TaskEditorComponent
     ],
     providers: [
         GetProjectTasks
