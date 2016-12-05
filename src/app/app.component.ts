@@ -13,7 +13,7 @@ import {LeftSlider} from './common/slider/left-slider.component';
 
 
 import {MarkdownIME} from '../assets/plug/MarkdownIME';
-import { Test } from './test.component';
+//import { Test } from './test.component';
 
 import { Uploader } from './common/uploader/uploader.component';
 /*
@@ -53,12 +53,9 @@ import { Uploader } from './common/uploader/uploader.component';
       </div>
     </div>
     <main>
-      <div  class='ml50' id="editor" contentEditable="true">
-        <p>Input your text here...</p>
-      </div>
       <router-outlet></router-outlet>
 
-      <test-child></test-child>
+      <!--<uploader-demo></uploader-demo>-->
     </main>
     
     <!--<footer class = ml50>
@@ -104,9 +101,6 @@ export class AppComponent {
 
   ngOnInit() {
     console.log('Initial App State', this.appState.state);
-    console.log(MarkdownIME);
-    var editor = document.getElementById('editor');
-    MarkdownIME.Enhance(editor);
   }
 }
 

@@ -15,16 +15,11 @@ class Task {
   <div>
     <p>项目任务板</p>
   </div>
-  <div>
-      <ul class="items">
-        <li *ngFor="let task of tasks"
-          [class.selected]="isSelected(task)"
-          (click)="onSelect(task)">
-          <span class="badge">{{task.Id}}</span> {{task.Title}}
-        </li>
-      </ul>
-      <p>这是组件二的展示板</p><p>{{this.test}}</p>
-      <router-outlet></router-outlet>
+  <div class="layout-main">
+    <div class="panel-main">
+        <TreeContainer [trees]="taskbags">
+        </TreeContainer>
+    </div>
   </div>
   `
 })
@@ -33,13 +28,39 @@ export class ProjectMainTaskComponent implements OnInit {
   tasks: Task[];
   public selectedId: string;
   test:string;
-
+  taskbags:any[];
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private GetProjectTasks:GetProjectTasks,
     private wpGlobalStateService:WpGlobalStateService
   ) {
+     setTimeout(() => {
+            // this.trees = [{
+            //     nodes: this.nodes,
+            //     options: this.customTemplateStringOptions
+            // },{
+            //     nodes:secondnodes,
+            //     options: this.customTemplateStringOptions
+            // }]
+            this.taskbags =[];
+            for(let i=0;i<10;i++){
+                let childId_1 = (Math.floor(Math.random() * 10000000000000)).toString();
+                let obj = {
+                pid: "first",
+                bag_id: childId_1,
+                name: childId_1,
+                pos: 100+i,
+                children:[],
+                children_ids:[],
+                children_manhour:0,
+                children_completedmanhour:0,
+            }
+            this.taskbags.push(obj);
+            }
+        }, 0, () => {
+            console.log("initial trees data");
+        });
       wpGlobalStateService.Rxjs_Subject_Test$.subscribe(
         value=>{
           this.test = value;

@@ -17,6 +17,7 @@ import { ProjectTaskDetalComponent } from '../../common/task/project-task-detail
 import { TaskEditorComponent } from '../../common/editor/task-editor.component'
 
 import { ProjectRoutes } from './project.routes';
+import { TreeModule } from 'app/angular2-tree-component/dist/angular2-tree-component';
 
 //service
 import { GetProjectTasks } from '../../service/project/getProjectTasks';
@@ -25,7 +26,8 @@ import { GetProjectTasks } from '../../service/project/getProjectTasks';
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule.forChild(ProjectRoutes)
+        RouterModule.forChild(ProjectRoutes),
+        TreeModule
     ],
     declarations: [
         RightSlider,

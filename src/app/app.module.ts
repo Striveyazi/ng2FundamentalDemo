@@ -1,9 +1,11 @@
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule,JsonpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
+
+import { TreeModule } from 'app/angular2-tree-component/dist/angular2-tree-component';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -15,8 +17,8 @@ import { ROUTES } from './app.routes';
 import { DashBoardModule } from './areas/dashboard/dashboard.module';
 import { ProjectsModule } from './areas/projects/projects.module';
 
-import { Test } from './test.component';
 import { Uploader } from './common/uploader/uploader.component';
+import { FileUploader,FileSelectDirective,FileDropDirective} from 'ng2-file-upload';
 
 // App is our top level component
 import { AppComponent } from './app.component';
@@ -26,8 +28,6 @@ import { AppState, InternalStateType } from './app.service';
 // egde slider/expand components
 import {LeftExpand} from './common/slider/left-expand.component';
 import {LeftSlider} from './common/slider/left-slider.component';
-
-//import { XLarge } from './home/x-large';
 
 import { SearchDashBoard } from './slider/search-dashboard.component';
 import { SearchProject } from './slider/search-project.component';
@@ -54,9 +54,8 @@ type StoreType = {
     AppComponent,
     LeftExpand,
     LeftSlider,
-    //XLarge
-    Test,
-    Uploader
+    Uploader,
+    FileSelectDirective,FileDropDirective
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -64,6 +63,8 @@ type StoreType = {
     HttpModule,
     DashBoardModule,
     ProjectsModule,
+    TreeModule,
+     JsonpModule,
     RouterModule.forRoot(ROUTES, { useHash: false })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
