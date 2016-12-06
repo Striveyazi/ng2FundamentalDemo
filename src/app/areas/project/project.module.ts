@@ -13,12 +13,12 @@ import { ProjectTopicsComponent } from './project-topics.component';
 import { ProjectMemberComponent } from './project-member.component'
 
 import { RightSlider } from '../../common/slider/right-slider.component'
-import { ProjectTaskDetalComponent } from '../../common/task/project-task-detail.component'
+ import { ProjectTaskDetalComponent } from '../../common/task/project-task-detail.component'
 import { TaskEditorComponent } from '../../common/editor/task-editor.component'
 
 import { ProjectRoutes } from './project.routes';
-import { TreeModule } from 'app/angular2-tree-component/dist/angular2-tree-component';
-
+// import { TreeModule } from 'app/angular2-tree-component/dist/angular2-tree-component';
+import {TaskModule} from '../../common/task/task.module';
 //service
 import { GetProjectTasks } from '../../service/project/getProjectTasks';
 
@@ -27,7 +27,7 @@ import { GetProjectTasks } from '../../service/project/getProjectTasks';
         CommonModule,
         FormsModule,
         RouterModule.forChild(ProjectRoutes),
-        TreeModule
+        TaskModule
     ],
     declarations: [
         RightSlider,

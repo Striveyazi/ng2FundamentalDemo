@@ -17,8 +17,7 @@ import { ROUTES } from './app.routes';
 import { DashBoardModule } from './areas/dashboard/dashboard.module';
 import { ProjectsModule } from './areas/projects/projects.module';
 
-import { Uploader } from './common/uploader/uploader.component';
-import { FileUploader,FileSelectDirective,FileDropDirective} from 'ng2-file-upload';
+//import { Uploader } from './common/uploader/uploader.component';
 
 // App is our top level component
 import { AppComponent } from './app.component';
@@ -29,8 +28,9 @@ import { AppState, InternalStateType } from './app.service';
 import {LeftExpand} from './common/slider/left-expand.component';
 import {LeftSlider} from './common/slider/left-slider.component';
 
-import { SearchDashBoard } from './slider/search-dashboard.component';
-import { SearchProject } from './slider/search-project.component';
+// import { SearchDashBoard } from './slider/search-dashboard.component';
+// import { SearchProject } from './slider/search-project.component';
+import {TaskModule} from './common/task/task.module';
 
 
 // Application wide providers
@@ -54,8 +54,7 @@ type StoreType = {
     AppComponent,
     LeftExpand,
     LeftSlider,
-    Uploader,
-    FileSelectDirective,FileDropDirective
+    //Uploader
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -63,8 +62,9 @@ type StoreType = {
     HttpModule,
     DashBoardModule,
     ProjectsModule,
-    TreeModule,
+    TaskModule,
      JsonpModule,
+
     RouterModule.forRoot(ROUTES, { useHash: false })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection

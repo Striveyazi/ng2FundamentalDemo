@@ -17,8 +17,8 @@ class Task {
   </div>
   <div class="layout-main">
     <div class="panel-main">
-        <TreeContainer [trees]="taskbags">
-        </TreeContainer>
+        <mianTaskContainer [trees]="taskbags">
+        </mianTaskContainer>
     </div>
   </div>
   `
