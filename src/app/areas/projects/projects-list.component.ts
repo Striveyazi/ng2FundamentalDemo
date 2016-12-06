@@ -24,6 +24,7 @@ class Project {
 
 export class ProjectsListComponent implements OnInit {
   projects: Project[];
+
   public selectedId: number;
 
   constructor(

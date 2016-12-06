@@ -12,6 +12,9 @@ import { DashBoardNoteComponent } from './dashboard-note.component';
 
 import { DashboardRoutes } from './dashboard.routes';
 
+import { FileSelectDirective,FileDropDirective} from 'ng2-file-upload';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +25,8 @@ import { DashboardRoutes } from './dashboard.routes';
     DashBoardComponent,
     DashBoardHomeComponent,
     DashBoardCalendarComponent,
-    DashBoardNoteComponent
+    DashBoardNoteComponent,
+    FileSelectDirective,FileDropDirective
   ],
   providers: [
   ]

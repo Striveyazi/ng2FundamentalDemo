@@ -5,8 +5,8 @@ import { Component,OnInit } from '@angular/core';
 @Component({
     template:
     `
-    <div>
-        <nav class="ml50">
+    <div class="ml50">
+        <nav>
             <div class="headernav-left">
                 <div class="title">
                     项目

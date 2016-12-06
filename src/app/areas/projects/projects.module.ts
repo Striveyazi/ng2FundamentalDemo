@@ -11,6 +11,7 @@ import { ProjectsRoutes } from './projects.routes';;
 import { ProjectsComponent } from './projects.component';
 import { ProjectsListComponent } from './projects-list.component';
 
+
 @NgModule({
   imports: [
     CommonModule,

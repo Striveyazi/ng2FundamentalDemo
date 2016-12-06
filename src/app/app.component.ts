@@ -54,7 +54,6 @@ import { Uploader } from './common/uploader/uploader.component';
     </div>
     <main>
       <router-outlet></router-outlet>
-
       <!--<uploader-demo></uploader-demo>-->
     </main>
     

@@ -32,13 +32,6 @@ import { Component,OnInit } from '@angular/core';
 			</div>
 		</nav>
     <router-outlet></router-outlet>
-		
-		<h3>Agree: {{agreed}}, Disagree: {{disagreed}}</h3>
-		<my-voter *ngFor="let voter of voters"
-					[name]="voter"
-					(onVoted)="onVoted($event)">
-		</my-voter>
-
 	</div>
   `,
 
@@ -46,18 +39,10 @@ import { Component,OnInit } from '@angular/core';
 
 /* 二级壳 */
 export class DashBoardComponent implements OnInit {
-	agreed = 0;
-	disagreed = 0;
-	voters = ['Mr.IQ','Ms.Universe','Bombasto'];
-
 	constructor() {}
-
 	ngOnInit() {
     // viewChild is set after the view has been initialized
     // this.activatedRouteService.setActivatedRouteSegment("dashboard");
   }
 
-	onVoted(agreed:boolean){
-		agreed?this.agreed++ :this.disagreed++;
-	}
  }
